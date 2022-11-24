@@ -12,6 +12,11 @@ public class MyWait : MyState
             Context.CurrentState = new MyMove(Context);
         }
         //Transition vers Attack
+        if (Context.EnnemiesInRanges().Count > 0)
+        {
+            Context.CurrentState = new MyAttack(Context);
+            Debug.Log("Ennemy en vue");
+        }
     }
 
     public override void SetUp() {}

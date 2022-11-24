@@ -4,8 +4,7 @@ using UnityEngine;
 public class Ennemy : MonoBehaviour
 {
     private int _hP = 10;
-
-    
+    private float rangeX, rangeY, rangeZ;
 
     public static List<Ennemy> Ennemies = new List<Ennemy>();
 
@@ -13,8 +12,7 @@ public class Ennemy : MonoBehaviour
     {
         _hP -= damage;
         if (_hP <= 0)
-        {
-            Destroy(gameObject);
+        { Destroy(gameObject);
         }
     }
     private void Awake()

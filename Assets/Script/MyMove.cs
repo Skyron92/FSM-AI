@@ -4,6 +4,7 @@ public class MyMove : MyState
 {
 
     private Vector3 _moveTarget;
+    
 
     private bool HasReachedDestintaion => Vector3.Distance(_moveTarget, Context.transform.position) < 0.1f;
     public MyMove(MyFSMAI context) : base(context) { }
@@ -20,9 +21,9 @@ public class MyMove : MyState
 
     public override void SetUp()
     {
-        if (Camera.main != null)
+        if (Context.camera != null)
         {
-            _moveTarget = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _moveTarget = Context.camera.ScreenToWorldPoint(Input.mousePosition);
             _moveTarget.y = Context.transform.position.y;
         }   
     }
