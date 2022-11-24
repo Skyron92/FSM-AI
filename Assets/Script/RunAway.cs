@@ -8,6 +8,9 @@ public class RunAway : MyState
     private float distanceWithPredator;
     private Vector3 posPredator, _runTarget;
     private float _distance;
+    
+    //Problème à régler !!!!
+    //L'instance ne part pas forcément dans la direction opposée du Predateur !
 
     public override void Transition()
     {
@@ -26,6 +29,7 @@ public class RunAway : MyState
     }
 
     public override void Do()
-    { Context.transform.Translate(_runTarget);
+    {
+        Context.NavMeshAgent.SetDestination(_runTarget);
     }
 }

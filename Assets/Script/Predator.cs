@@ -6,12 +6,14 @@ public class Predator : MonoBehaviour
 {
     public static List<Predator> Predators = new List<Predator>();
     [SerializeField] int FieldOfView, FieldOfAttack;
-    [Range(1, 10)] public int DangerosityIndex;
+    [Range(5, 15)] public int DangerosityIndex;
 
     private void Awake()
     {
         Predators.Add(this);
         DangerosityIndex = Random.Range(1, 10);
+        FieldOfAttack = DangerosityIndex / 2;
+        FieldOfView = DangerosityIndex + 2;
     }
 
     private void OnDestroy()

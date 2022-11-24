@@ -24,9 +24,10 @@ public class MyAttack : MyState
     public override void Do()
     {
         if (TimeSinceLastAttack >= 1f)
-        { Ennemy firstOrDefault = Context.EnnemiesInRanges().First(); 
-            firstOrDefault.Damage(2);
-            TimeSinceLastAttack = 0f; }
+        { Ennemy firstOrDefault = Context.EnnemiesInRanges().FirstOrDefault();
+            if (firstOrDefault != null)
+            { firstOrDefault.Damage(2);
+                TimeSinceLastAttack = 0f; } }
         TimeSinceLastAttack += Time.deltaTime;
     }
 }
