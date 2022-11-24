@@ -13,9 +13,10 @@ public class MyAttack : MyState
     {
         //transition vers Wait
         if (Context.EnnemiesInRanges().Count == 0)
-        {
-            Context.CurrentState = new MyWait(Context);
-        }
+        { Context.CurrentState = new MyWait(Context); }
+        //Transition vers RunAway
+        if (Context.PredatorsInRange().Count != 0)
+        { Context.CurrentState = new RunAway(Context); }
     }
 
     public override void SetUp() { }
@@ -23,12 +24,9 @@ public class MyAttack : MyState
     public override void Do()
     {
         if (TimeSinceLastAttack >= 1f)
-        {
-            Ennemy firstOrDefault = Context.EnnemiesInRanges().First();
+        { Ennemy firstOrDefault = Context.EnnemiesInRanges().First(); 
             firstOrDefault.Damage(2);
-            TimeSinceLastAttack = 0f;
-        }
-
+            TimeSinceLastAttack = 0f; }
         TimeSinceLastAttack += Time.deltaTime;
     }
 }

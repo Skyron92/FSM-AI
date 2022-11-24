@@ -37,9 +37,18 @@ public class MyFSMAI : MonoBehaviour
      {
          List<Ennemy> inRange = new List<Ennemy>();
          foreach (Ennemy ennemy in Ennemy.Ennemies)
-         { if (Vector3.Distance(ennemy.transform.position, transform.position) <= SightRange) inRange.Add(ennemy);
-         }
+         { if (Vector3.Distance(ennemy.transform.position, transform.position) <= SightRange) inRange.Add(ennemy); }
          inRange = inRange.OrderBy(ennemy => Vector3.Distance(ennemy.transform.position, transform.position)).ToList();
+         return inRange;
+     }
+
+     public List<Predator> PredatorsInRange()
+     {
+         List<Predator> inRange = new List<Predator>();
+         foreach (Predator predator in Predator.Predators)
+         {if(Vector3.Distance(predator.transform.position, transform.position) <= SightRange) inRange.Add(predator); }
+         inRange = inRange.OrderBy(predator => Vector3.Distance(predator.transform.position, transform.position))
+             .ToList();
          return inRange;
      }
 }
