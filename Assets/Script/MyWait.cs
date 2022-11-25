@@ -15,14 +15,13 @@ public class MyWait : MyState
         }
         //Transition vers RunAway
         if (Context.PredatorsInRange().Count > 0)
-        {
-            Context.CurrentState = new MyAttack(Context);
+        { Context.CurrentState = new MyAttack(Context);
         }
     }
 
     public override void SetUp() {}
 
     public override void Do()
-    {
+    {Debug.Log("Waiting...");
     }
 }
