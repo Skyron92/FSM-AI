@@ -4,7 +4,6 @@ public abstract class PredatorState : MonoBehaviour
 {
     protected Predator PredatorContext;
     private int _predatorHP;
-    
     public bool SetUpDone;
 
     protected PredatorState(Predator context)
