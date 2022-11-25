@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿using Palmmedia.ReportGenerator.Core.Parser.Analysis;using UnityEngine;
 
 public abstract class PredatorState : MonoBehaviour
 {

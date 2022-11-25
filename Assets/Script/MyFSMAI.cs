@@ -1,9 +1,7 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
-using Unity.VisualScripting;
 
 public class MyFSMAI : MonoBehaviour
 {
@@ -11,7 +9,7 @@ public class MyFSMAI : MonoBehaviour
     [SerializeField] int SightRange;
      public NavMeshAgent NavMeshAgent { get; private set; }
      public Camera camera;
-     public List<MyFSMAI> FSMAIs = new List<MyFSMAI>();
+     public static List<MyFSMAI> FSMAIs = new List<MyFSMAI>();
      private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
