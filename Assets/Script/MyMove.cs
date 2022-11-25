@@ -1,17 +1,12 @@
 using UnityEngine;
 
 public class MyMove : MyState
-{
-
-    private Vector3 _moveTarget;
-    
-
+{ private Vector3 _moveTarget;
     private bool HasReachedDestintaion => Vector3.Distance(_moveTarget, Context.transform.position) < 0.1f;
     public MyMove(MyFSMAI context) : base(context) { }
 
     public override void Transition()
-    {
-        //Transition vers Wait
+    { //Transition vers Wait
         if (HasReachedDestintaion)
         { Context.CurrentState = new MyWait(Context); }
         //Transition vers Move

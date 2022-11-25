@@ -667,6 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Predator
       objectReference: {fileID: 0}
+    - target: {fileID: 4804840230547972669, guid: e740206ae7bb0fa4190e646671f5e91e, type: 3}
+      propertyPath: m_Speed
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e740206ae7bb0fa4190e646671f5e91e, type: 3}
 --- !u!1001 &6685455817143817480

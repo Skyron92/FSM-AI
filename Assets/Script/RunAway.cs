@@ -7,14 +7,9 @@ public class RunAway : MyState
     public RunAway(MyFSMAI context) : base(context) { }
     private float distanceWithPredator, X, Y, Z;
     private Vector3 predatorPosition, _fuite, predatorDirection;
-    
-    
-    //Problème à régler !!!!
-    //L'instance ne part pas forcément dans la direction opposée du Predateur !
 
     public override void Transition()
-    {
-        //Transition vers Wait
+    { //Transition vers Wait
         if (Context.PredatorsInRange().Count == 0)
         { Context.CurrentState = new MyWait(Context); }
         //Transition vers Attack
