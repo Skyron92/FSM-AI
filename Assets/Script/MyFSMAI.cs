@@ -6,6 +6,7 @@ using System.Linq;
 public class MyFSMAI : MonoBehaviour
 {
     public MyState CurrentState;
+    [SerializeField] float _hP = 20;
     [SerializeField] int SightRange;
      public NavMeshAgent NavMeshAgent { get; private set; }
      public Camera camera;
@@ -31,6 +32,14 @@ public class MyFSMAI : MonoBehaviour
              CurrentState.SetupDone = true;
          }
          CurrentState.Do();
+     }
+     
+     public void Damage(float damage)
+     {
+         _hP -= damage;
+         if (_hP <= 0)
+         { Destroy(gameObject);
+         }
      }
 
      private void OnDrawGizmos()

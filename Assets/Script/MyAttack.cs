@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MyAttack : MyState
 {
-    private int _damage = 2; 
+    private int _damage = 4; 
     private float TimeSinceLastAttack = 3f;
     public MyAttack(MyFSMAI context) : base(context)
     {
@@ -26,7 +26,7 @@ public class MyAttack : MyState
         if (TimeSinceLastAttack >= 1f)
         { Ennemy firstOrDefault = Context.EnnemiesInRanges().FirstOrDefault();
             if (firstOrDefault != null)
-            { firstOrDefault.Damage(2);
+            { firstOrDefault.Damage(_damage);
                 TimeSinceLastAttack = 0f; } }
         TimeSinceLastAttack += Time.deltaTime;
     }

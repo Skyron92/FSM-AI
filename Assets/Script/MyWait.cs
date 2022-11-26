@@ -21,7 +21,5 @@ public class MyWait : MyState
 
     public override void SetUp() {}
 
-    public override void Do()
-    {Debug.Log("Waiting...");
-    }
+    public override void Do() {}
 }

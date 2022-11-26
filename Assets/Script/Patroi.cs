@@ -23,6 +23,10 @@ public class Patroi : PredatorState
         if (PredatorContext.MyFsmaiInFieldOfView().Count >0)
         { PredatorContext.CurrentState = new Hunt(PredatorContext);
         }
+        //Transition vers Hurt
+        if (PredatorContext.MyFsmaiInRange().Count > 0)
+        { PredatorContext.CurrentState = new Hurt(PredatorContext);
+        }
     }
 
     public override void SetUp()

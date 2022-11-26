@@ -114,7 +114,9 @@ MonoBehaviour:
   CurrentState: {fileID: 0}
   FieldOfView: 12
   FieldOfAttack: 5
+  scaleIndex: 0
   DangerosityIndex: 0
+  Damage: 0
 --- !u!195 &4804840230547972669
 NavMeshAgent:
   m_ObjectHideFlags: 0

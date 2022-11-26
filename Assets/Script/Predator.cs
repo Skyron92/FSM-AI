@@ -9,7 +9,8 @@ public class Predator : MonoBehaviour
     public PredatorState CurrentState;
     public static List<Predator> Predators = new List<Predator>();
     [SerializeField] float FieldOfView, FieldOfAttack, scaleIndex;
-    [Range(5, 15)] public float DangerosityIndex;
+    [Range(10, 15)] public float DangerosityIndex;
+    public float Damage;
     public NavMeshAgent NavMeshAgent { get; private set; }
 
 
@@ -26,8 +27,9 @@ public class Predator : MonoBehaviour
     private void Awake()
     {
         Predators.Add(this);
-        DangerosityIndex = Random.Range(5, 15);
+        DangerosityIndex = Random.Range(10, 15);
         FieldOfAttack = DangerosityIndex;
+        Damage = DangerosityIndex - 5;
         FieldOfView = DangerosityIndex * 1.5f;
         scaleIndex = DangerosityIndex / 2 + 1;
         this.transform.localScale = new Vector3(scaleIndex, scaleIndex, scaleIndex);
