@@ -30,7 +30,10 @@ public class AlphaPatroi : AlphaState
     public override void Do()
     { AlphaContext.NavMeshAgent.SetDestination(_target);
         if (AlphaContext.chance >= 9990)
-        { Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity); }
+        {
+            Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity);
+            
+        }
     }
 
    
