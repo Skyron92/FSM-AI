@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel;
 using UnityEngine;
 
 public class Blue : MonoBehaviour
@@ -11,18 +8,19 @@ public class Blue : MonoBehaviour
    [SerializeField] private float FieldOfView, FieldOfAttack;
 
    private void Awake()
-   {
-      Blues.Add(this);
+   { Blues.Add(this);
    }
 
    private void OnDestroy()
-   {
-      Blues.Remove(this);
+   { Blues.Remove(this);
    }
 
    private void OnDrawGizmos()
    {
       Gizmos.color = Color.cyan;
       Gizmos.DrawWireSphere(transform.position, FieldOfView);
+
+      Gizmos.color = Color.red;
+      Gizmos.DrawWireSphere(transform.position, FieldOfAttack);
    }
 }

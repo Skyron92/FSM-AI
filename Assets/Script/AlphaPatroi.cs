@@ -1,16 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using Unity.VisualScripting;
+using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AlphaPatroi : AlphaState
 {
     private float _rangeX, _rangeZ;
     private Vector3 _target;
+    
+    private bool HasReachedDestination => Vector3.Distance(_target, AlphaContext.transform.position) < 0.1f;
     public AlphaPatroi(Alpha context) : base(context)
     {
     }
 
     public override void Transition()
     {
-        
+        //Loop
+        if (HasReachedDestination)
+        { AlphaContext.CurrentState = new AlphaPatroi(AlphaContext); }
     }
 
     public override void SetUp()
@@ -21,15 +28,13 @@ public class AlphaPatroi : AlphaState
     }
 
     public override void Do()
-    {
-        AlphaContext.NavMeshAgent.SetDestination(_target);
-        InvokeRepeating("Spawn", 2, 1);
+    { AlphaContext.NavMeshAgent.SetDestination(_target);
+        if (AlphaContext.chance >= 9990)
+        { Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity); }
     }
 
-    public void Spawn()
-    { float chance = Random.Range(0, 1);
-        if (chance >= 0.7)
-        { Instantiate(AlphaContext.prefabBlue);
-        Debug.Log("Bonjour !");
-        } }
+   
+     
+        
+        
 }

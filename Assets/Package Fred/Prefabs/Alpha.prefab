@@ -135,6 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentState: {fileID: 0}
   FieldOfAlpha: 20
-  FieldOfView: 0
-  FieldOfAttack: 0
+  FieldOfView: 8
+  FieldOfAttack: 5
   prefabBlue: {fileID: 2282389259822514223, guid: c64b80ca36970484e90e6f1b0a81a8e7, type: 3}
