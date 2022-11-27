@@ -9,13 +9,10 @@ public class AlphaPatroi : AlphaState
     private Vector3 _target;
     
     private bool HasReachedDestination => Vector3.Distance(_target, AlphaContext.transform.position) < 0.1f;
-    public AlphaPatroi(Alpha context) : base(context)
-    {
-    }
+    public AlphaPatroi(Alpha context) : base(context) {}
 
     public override void Transition()
-    {
-        //Loop
+    { //Loop
         if (HasReachedDestination)
         { AlphaContext.CurrentState = new AlphaPatroi(AlphaContext); }
     }
@@ -30,10 +27,7 @@ public class AlphaPatroi : AlphaState
     public override void Do()
     { AlphaContext.NavMeshAgent.SetDestination(_target);
         if (AlphaContext.chance >= 9990)
-        {
-            Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity);
-            
-        }
+        { Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity); }
     }
 
    

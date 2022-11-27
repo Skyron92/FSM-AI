@@ -2,7 +2,8 @@
 
 public class BlueMove : BlueState
 {
-    private Vector3 _target;
+    private Vector3 _target, _alphaPosition, _alphaDirection;
+    private float distanceWithAlpha;
     private bool HasReachedDestination  => Vector3.Distance(_target, BlueContext.transform.position) < 0.3f;
     public BlueMove(Blue context) : base(context)
     {
@@ -16,6 +17,10 @@ public class BlueMove : BlueState
         //Transition vers BluePatroi
         if (BlueContext.distanceWithAlpha < 0.3)
         { BlueContext.CurrentState = new BluePatroi(BlueContext); }
+        //Transition vers RunAway
+        if (BlueContext.PredatorsInRange().Count > 0)
+        { foreach (Blue blue in Alpha.Meute())
+            { BlueContext.CurrentState = new BlueRunAway(BlueContext); } }
     }
 
     public override void SetUp()

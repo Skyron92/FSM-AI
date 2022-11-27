@@ -17,8 +17,11 @@ public class BluePatroi : BlueState
         { BlueContext.CurrentState = new BluePatroi(BlueContext); }
         //Transition vers BlueMove
         if (BlueContext.distanceWithAlpha > 1)
-        { BlueContext.CurrentState = new BlueMove(BlueContext);
-        }
+        { BlueContext.CurrentState = new BlueMove(BlueContext); }
+        //Transition vers RunAway
+        if (BlueContext.PredatorsInRange().Count > 0)
+        { foreach (Blue blue in Alpha.Meute())
+            { BlueContext.CurrentState = new BlueRunAway(BlueContext); } }
     }
 
     public override void SetUp()

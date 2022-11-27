@@ -7,8 +7,7 @@ public abstract class BlueState : MonoBehaviour
     public bool setUpDone, isAnAlpha;
 
     protected BlueState(Blue context)
-    { BlueContext = context;
-    }
+    { BlueContext = context;}
     public abstract void Transition();
     public abstract void SetUp();
     public abstract void Do();

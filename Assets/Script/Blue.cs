@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -37,5 +38,15 @@ public class Blue : MonoBehaviour
 
       Gizmos.color = Color.red;
       Gizmos.DrawWireSphere(transform.position, FieldOfAttack);
+   }
+   
+   public List<Predator> PredatorsInRange()
+   {
+      List<Predator> inRange = new List<Predator>();
+      foreach (Predator predator in Predator.Predators)
+      {if(Vector3.Distance(predator.transform.position, transform.position) <= FieldOfView) inRange.Add(predator); }
+      inRange = inRange.OrderBy(predator => Vector3.Distance(predator.transform.position, transform.position))
+         .ToList();
+      return inRange;
    }
 }

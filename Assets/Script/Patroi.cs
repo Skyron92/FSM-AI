@@ -27,6 +27,7 @@ public class Patroi : PredatorState
         if (PredatorContext.MyFsmaiInRange().Count > 0)
         { PredatorContext.CurrentState = new Hurt(PredatorContext);
         }
+        //Transition vers TerritoryWar
     }
 
     public override void SetUp()
