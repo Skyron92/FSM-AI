@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class AlphaState : MonoBehaviour
+public abstract class AlphaState
 {
     protected Alpha AlphaContext;
     private int _alphaHp;

@@ -16,11 +16,11 @@ public class Blue : MonoBehaviour
    private void Awake()
    { Blues.Add(this);
       NavMeshAgent = GetComponent<NavMeshAgent>();
-      CurrentState = new BlueMove(this); }
+      CurrentState = new BlueMove(this);
+   }
 
    private void Update()
    {
-      AlphaPosition = Alpha._transform.position;
       distanceWithAlpha = Vector3.Distance(Alpha._transform.position, transform.position);
       CurrentState.Transition();
       if (CurrentState.setUpDone)

@@ -29,6 +29,6 @@ public class BlueRunAway : BlueState
 
     public override void Do()
     {
-        throw new System.NotImplementedException();
+        BlueContext.NavMeshAgent.SetDestination(_fuite);
     }
 }
