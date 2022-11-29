@@ -66,4 +66,11 @@ public class MyFSMAI : MonoBehaviour
              .ToList();
          return inRange;
      }
+
+     public List<Blue> BLuesInRange()
+     { List<Blue> inRange = new List<Blue>();
+         foreach (Blue blue in Alpha.Meute())
+         {if(Vector3.Distance(blue.transform.position, transform.position) <= SightRange) inRange.Add(blue); }
+         inRange = inRange.OrderBy(blue => Vector3.Distance(blue.transform.position, transform.position)).ToList();
+         return inRange; }
 }

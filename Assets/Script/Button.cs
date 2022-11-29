@@ -4,7 +4,7 @@ public class Button : MonoBehaviour
 {
     public GameObject prefabPredator, prefabBase, prefabAlpha;
     private int prob;
-
+    
     public void CreatePred()
     { Instantiate(prefabPredator); }
 
@@ -15,11 +15,13 @@ public class Button : MonoBehaviour
     { Instantiate(prefabAlpha); }
 
     public void CreateRandom()
-    { prob = Random.Range(1, 3);
+    { prob = Random.Range(1, 4);
+        Debug.Log(prob);
         if (prob == 1)
         { CreateAlpha(); }
         if (prob == 2)
         { CreateBase(); }
         if (prob == 3)
-        { CreatePred(); } }
+        { CreatePred(); }
+    }
 }

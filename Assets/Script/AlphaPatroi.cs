@@ -35,7 +35,9 @@ public class AlphaPatroi : AlphaState
                 AlphaContext.MesMates.Add(blue); }
 
             foreach (var VARIABLE in AlphaContext.MesMates)
-            { VARIABLE.CurrentState = new BlueMove(VARIABLE); }
+            {
+                VARIABLE.CurrentState = new BlueMove(VARIABLE);
+            }
         } }
 
    

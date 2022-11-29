@@ -3,19 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a713ee4b-bb25-4429-8a0a-fd543e07b092" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.FSM-AI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.FSM-AI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player 1.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player 1.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Player.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Predator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package Fred/Prefabs/Predator.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Package Fred/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Package Fred/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Alpha.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Alpha.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/AlphaPatroi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/AlphaPatroi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Blue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Blue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Script/Camera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Camera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/Button.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/Button.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/MyFSMAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/MyFSMAI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +76,7 @@
       <updated>1669468194588</updated>
       <workItem from="1669468215014" duration="2375000" />
       <workItem from="1669540461845" duration="10464000" />
-      <workItem from="1669753563480" duration="3322000" />
+      <workItem from="1669753563480" duration="5326000" />
     </task>
     <servers />
   </component>
