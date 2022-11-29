@@ -11,16 +11,20 @@ public class Blue : MonoBehaviour
    [SerializeField] private float FieldOfView, FieldOfAttack;
    public NavMeshAgent NavMeshAgent { get; private set; }
    public float distanceWithAlpha;
-   public Vector3 AlphaPosition;
+   public Alpha AlphaCreator;
+   public Vector3 AlphaPositionForBlue;
 
    private void Awake()
    { Blues.Add(this);
       NavMeshAgent = GetComponent<NavMeshAgent>();
       CurrentState = new BlueMove(this);
+      AlphaCreator = AlphaNear().First();
+      
    }
 
    private void Update()
    {
+      AlphaPositionForBlue = AlphaCreator.AlphaPosition;
       distanceWithAlpha = Vector3.Distance(Alpha._transform.position, transform.position);
       CurrentState.Transition();
       if (CurrentState.setUpDone)
@@ -41,12 +45,18 @@ public class Blue : MonoBehaviour
    }
    
    public List<Predator> PredatorsInRange()
-   {
-      List<Predator> inRange = new List<Predator>();
+   { List<Predator> inRange = new List<Predator>();
       foreach (Predator predator in Predator.Predators)
       {if(Vector3.Distance(predator.transform.position, transform.position) <= FieldOfView) inRange.Add(predator); }
       inRange = inRange.OrderBy(predator => Vector3.Distance(predator.transform.position, transform.position))
          .ToList();
       return inRange;
    }
+
+   public List<Alpha> AlphaNear()
+   { List<Alpha> Near = new List<Alpha>();
+      foreach (Alpha alpha in Alpha.Alphas)
+      { if(Vector3.Distance(alpha.transform.position, transform.position) <= FieldOfView) Near.Add(alpha); }
+      Near = Near.OrderBy(alpha => Vector3.Distance(alpha.transform.position, transform.position)).ToList();
+      return Near; }
 }

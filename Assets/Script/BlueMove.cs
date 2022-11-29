@@ -2,9 +2,10 @@
 
 public class BlueMove : BlueState
 {
-    private Vector3 _target, _alphaPosition, _alphaDirection;
+    private Vector3 _target;
     private float distanceWithAlpha;
     private bool HasReachedDestination  => Vector3.Distance(_target, BlueContext.transform.position) < 0.3f;
+    
     public BlueMove(Blue context) : base(context)
     {
     }
@@ -25,7 +26,7 @@ public class BlueMove : BlueState
 
     public override void SetUp()
     { if (Alpha.Meute().Contains(BlueContext))
-        { _target = BlueContext.AlphaPosition; } }
+        { _target = BlueContext.AlphaPositionForBlue; } }
 
     public override void Do()
     { BlueContext.NavMeshAgent.SetDestination(_target); }

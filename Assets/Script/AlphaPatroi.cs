@@ -29,7 +29,7 @@ public class AlphaPatroi : AlphaState
         if (AlphaContext.chance >= 9990)
         {
             var newKid = GameObject.Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity);
-            newKid.GetComponent<Blue>().AlphaPosition = AlphaContext.transform.position;
+            newKid.GetComponent<Blue>().AlphaPositionForBlue = AlphaContext.AlphaPosition;
         }
     }
 

@@ -15,6 +15,7 @@ public class Alpha : MonoBehaviour
     [SerializeField] public GameObject prefabBlue;
     public int chance;
     public NavMeshAgent NavMeshAgent { get; private set; }
+    public Vector3 AlphaPosition;
     private void Awake()
     {
         FieldOfAlpha = AlphaRange;
@@ -32,6 +33,7 @@ public class Alpha : MonoBehaviour
 
     private void Update()
     { chance = Random.Range(0, 10000);
+        AlphaPosition = transform.position;
         CurrentState.Transition();
         if (!CurrentState.setUpDone)
         { CurrentState.SetUp();
