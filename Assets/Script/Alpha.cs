@@ -16,6 +16,8 @@ public class Alpha : MonoBehaviour
     public int chance;
     public NavMeshAgent NavMeshAgent { get; private set; }
     public Vector3 AlphaPosition;
+    public List<GameObject> Mates = new List<GameObject>();
+    public List<Blue> MesMates = new List<Blue>();
     private void Awake()
     {
         FieldOfAlpha = AlphaRange;

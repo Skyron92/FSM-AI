@@ -1,6 +1,7 @@
 ﻿using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
 public class AlphaPatroi : AlphaState
@@ -27,11 +28,15 @@ public class AlphaPatroi : AlphaState
     public override void Do()
     { AlphaContext.NavMeshAgent.SetDestination(_target);
         if (AlphaContext.chance >= 9990)
-        {
-            var newKid = GameObject.Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity);
-            newKid.GetComponent<Blue>().AlphaPositionForBlue = AlphaContext.AlphaPosition;
-        }
-    }
+        { GameObject newkid = GameObject.Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity); 
+            AlphaContext.Mates.Add(newkid);
+            foreach (GameObject VARIABLE in AlphaContext.Mates)
+            { Blue blue = VARIABLE.GetComponent<Blue>();
+                AlphaContext.MesMates.Add(blue); }
+
+            foreach (var VARIABLE in AlphaContext.MesMates)
+            { VARIABLE.CurrentState = new BlueMove(VARIABLE); }
+        } }
 
    
      

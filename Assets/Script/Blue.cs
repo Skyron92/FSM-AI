@@ -19,7 +19,7 @@ public class Blue : MonoBehaviour
       NavMeshAgent = GetComponent<NavMeshAgent>();
       CurrentState = new BlueMove(this);
       AlphaCreator = AlphaNear().First();
-      
+      Debug.Log(AlphaPositionForBlue);
    }
 
    private void Update()
