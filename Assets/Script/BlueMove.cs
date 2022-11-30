@@ -14,10 +14,7 @@ public class BlueMove : BlueState
     {
         //Loop
         if (HasReachedDestination)
-        { BlueContext.CurrentState = new BlueMove(BlueContext); }
-        //Transition vers BluePatroi
-        if (BlueContext.distanceWithAlpha < 0.3)
-        { BlueContext.CurrentState = new BluePatroi(BlueContext); }
+        { BlueContext.CurrentState = new BlueWait(BlueContext); }
         //Transition vers RunAway
         if (BlueContext.PredatorsInRange().Count > 0)
         { foreach (Blue blue in Alpha.Meute())
@@ -25,9 +22,10 @@ public class BlueMove : BlueState
     }
 
     public override void SetUp()
-    { if (Alpha.Meute().Contains(BlueContext))
-        { _target = BlueContext.AlphaPositionForBlue; } }
+    { _target = BlueContext.AlphaCreator.transform.position; 
+             }
 
     public override void Do()
-    { BlueContext.NavMeshAgent.SetDestination(_target); }
+    {Debug.Log(_target);
+        BlueContext.NavMeshAgent.SetDestination(_target); }
 }

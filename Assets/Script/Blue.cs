@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,21 +10,16 @@ public class Blue : MonoBehaviour
    [SerializeField] private float FieldOfView, FieldOfAttack;
    public NavMeshAgent NavMeshAgent { get; private set; }
    public float distanceWithAlpha;
-   public Alpha AlphaCreator;
-   public Vector3 AlphaPositionForBlue;
+   public Alpha AlphaCreator = new Alpha();
 
    private void Awake()
    { Blues.Add(this);
       NavMeshAgent = GetComponent<NavMeshAgent>();
-      CurrentState = new BlueMove(this);
-      AlphaCreator = AlphaNear().First();
-      Debug.Log(AlphaPositionForBlue);
+      CurrentState = new BlueWait(this);
    }
 
    private void Update()
-   {
-      AlphaPositionForBlue = AlphaCreator.AlphaPosition;
-      distanceWithAlpha = Vector3.Distance(Alpha._transform.position, transform.position);
+   { distanceWithAlpha = Vector3.Distance(Alpha._transform.position, transform.position);
       CurrentState.Transition();
       if (CurrentState.setUpDone)
       {CurrentState.SetUp();

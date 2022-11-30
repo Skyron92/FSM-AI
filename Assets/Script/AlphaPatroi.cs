@@ -26,19 +26,18 @@ public class AlphaPatroi : AlphaState
     }
 
     public override void Do()
-    { AlphaContext.NavMeshAgent.SetDestination(_target);
-        if (AlphaContext.chance >= 9990)
+    {  if (AlphaContext.chance >= 9990)
         { GameObject newkid = GameObject.Instantiate(AlphaContext.prefabBlue, AlphaContext.transform.position, Quaternion.identity); 
             AlphaContext.Mates.Add(newkid);
-            foreach (GameObject VARIABLE in AlphaContext.Mates)
-            { Blue blue = VARIABLE.GetComponent<Blue>();
-                AlphaContext.MesMates.Add(blue); }
-
-            foreach (var VARIABLE in AlphaContext.MesMates)
-            {
-                VARIABLE.CurrentState = new BlueMove(VARIABLE);
-            }
-        } }
+            foreach (GameObject BlueGO in AlphaContext.Mates)
+            { Blue blue = BlueGO.GetComponent<Blue>();
+                AlphaContext.MesMates.Add(blue); } }
+        foreach (Blue VARIABLE in AlphaContext.MesMates)
+        {
+            VARIABLE.AlphaCreator = AlphaContext;
+        }
+        AlphaContext.NavMeshAgent.SetDestination(_target);
+        }
 
    
      
