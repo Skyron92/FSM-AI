@@ -14,6 +14,15 @@ public class MyMove : MyState
         if (Context.PredatorsInRange().Count > 0)
         { Context.CurrentState = new MyAttack(Context);
         }
+        //Transition vers Reproduce
+        if (Context.PartnerInRange().Count > 0)
+        {
+            Context.CurrentState = new Reproduce(Context);
+        }
+        //Transition vers Attack
+        if (Context.EnnemiesInRanges().Count > 0)
+        { Context.CurrentState = new MyAttack(Context);
+        }
     }
 
     public override void SetUp()

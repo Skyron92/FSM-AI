@@ -7,11 +7,14 @@ public class MyWait : MyState
     public override void Transition()
     { //Transition vers Move
         if (Input.GetButtonDown("Fire2"))
-        { Context.CurrentState = new MyMove(Context);
+        { 
+            Context.CurrentState = new MyMove(Context);
         }
         //Transition vers Attack
-        if (Context.EnnemiesInRanges().Count > 0)
-        { Context.CurrentState = new MyAttack(Context);
+        if (
+            Context.EnnemiesInRanges().Count > 0)
+        { 
+            Context.CurrentState = new MyAttack(Context);
         }
         //Transition vers RunAway
         if (Context.PredatorsInRange().Count > 0)
