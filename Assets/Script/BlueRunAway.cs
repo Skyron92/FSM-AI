@@ -11,7 +11,7 @@ public class BlueRunAway : BlueState
     {
         //Transition vers Patroi
         if (BlueContext.PredatorsInRange().Count == 0)
-        { BlueContext.CurrentState = new BluePatroi(BlueContext); }
+        { BlueContext.CurrentState = new BlueMove(BlueContext); }
     }
 
     public override void SetUp()

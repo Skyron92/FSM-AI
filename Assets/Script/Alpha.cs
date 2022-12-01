@@ -56,4 +56,14 @@ public class Alpha : MonoBehaviour
         { if (Vector3.Distance(blue.transform.position, _transform.position) <= FieldOfAlpha)BlueInGroup.Add(blue); }
             BlueInGroup = BlueInGroup.OrderBy(blue => Vector3.Distance(blue.transform.position, _transform.position)).ToList();
             return BlueInGroup;}
+    
+    
+    public List<Predator> PredatorsInRange()
+    { List<Predator> inRange = new List<Predator>();
+        foreach (Predator predator in Predator.Predators)
+        {if(Vector3.Distance(predator.transform.position, transform.position) <= FieldOfAlpha) inRange.Add(predator); }
+        inRange = inRange.OrderBy(predator => Vector3.Distance(predator.transform.position, transform.position))
+            .ToList();
+        return inRange;
+    }
 }

@@ -11,6 +11,7 @@ public class Predator : MonoBehaviour
     [SerializeField] float FieldOfView, FieldOfAttack, scaleIndex;
     [Range(10, 15)] public float DangerosityIndex;
     public float Damage;
+    private int _hP = 25;
     public NavMeshAgent NavMeshAgent { get; private set; }
 
 
@@ -64,5 +65,13 @@ public class Predator : MonoBehaviour
         { if (Vector3.Distance(fsmai.transform.position, transform.position) <= FieldOfAttack) inRange.Add(fsmai) ; }
         inRange = inRange.OrderBy(fsmai => Vector3.Distance(fsmai.transform.position, transform.position)).ToList();
         return inRange;
+    }
+    
+    public void TakeDamage(int damage)
+    {
+        _hP -= damage;
+        if (_hP <= 0)
+        { Destroy(gameObject);
+        }
     }
 }

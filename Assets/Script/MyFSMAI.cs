@@ -14,7 +14,7 @@ public class MyFSMAI : MonoBehaviour
      private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
-        CurrentState = new MyWait(this);
+        CurrentState = new MyMove(this);
         camera = GetComponentInChildren<Camera>();
         FSMAIs.Add(this);
     }
