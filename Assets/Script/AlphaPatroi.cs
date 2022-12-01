@@ -1,5 +1,4 @@
-﻿using System;
-using Unity.VisualScripting;
+﻿using Unity.VisualScripting;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
@@ -18,13 +17,21 @@ public class AlphaPatroi : AlphaState
         {
             AlphaContext.CurrentState = new AlphaPatroi(AlphaContext);
         }
-        //Transition vers Alpha
+        //Transition vers RunAway
         if (AlphaContext.PredatorsInRange().Count > 0)
         {
             AlphaContext.CurrentState = new AlphaRun(AlphaContext);
             foreach (Blue VARIABLE in AlphaContext.MesMates)
             {
                 VARIABLE.CurrentState = new BlueRunAway(VARIABLE);
+            }
+        }
+        //Transition vers Attack
+        if (AlphaContext.PredatorsInRange().Count > 0 && Alpha.Meute().Count > 5)
+        {
+            foreach (Blue VARIABLE in Alpha.Meute())
+            {
+                VARIABLE.CurrentState = new BLueAttack(VARIABLE);
             }
         }
     }

@@ -4,7 +4,7 @@ public class BlueMove : BlueState
 {
     private Transform _alphaTransform;
     private float distanceWithAlpha;
-    private bool HasReachedDestination  => Vector3.Distance(_alphaTransform.position, BlueContext.transform.position) < 0.3f;
+    private bool HasReachedDestination  => Vector3.Distance(BlueContext.AlphaCreator.transform.position, BlueContext.transform.position) < 0.3f;
     
     public BlueMove(Blue context) : base(context)
     {

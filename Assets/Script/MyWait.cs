@@ -17,6 +17,11 @@ public class MyWait : MyState
         if (Context.PredatorsInRange().Count > 0)
         { Context.CurrentState = new MyAttack(Context);
         }
+        //Transition vers Reproduce
+        if (Context.PartnerInRange().Count > 0)
+        {
+            Context.CurrentState = new Reproduce(Context);
+        }
     }
 
     public override void SetUp() {}

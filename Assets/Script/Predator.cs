@@ -11,7 +11,7 @@ public class Predator : MonoBehaviour
     [SerializeField] float FieldOfView, FieldOfAttack, scaleIndex;
     [Range(10, 15)] public float DangerosityIndex;
     public float Damage;
-    private int _hP = 25;
+    public int _hP = 25;
     public NavMeshAgent NavMeshAgent { get; private set; }
 
 
@@ -64,6 +64,21 @@ public class Predator : MonoBehaviour
         foreach (MyFSMAI fsmai in MyFSMAI.FSMAIs)
         { if (Vector3.Distance(fsmai.transform.position, transform.position) <= FieldOfAttack) inRange.Add(fsmai) ; }
         inRange = inRange.OrderBy(fsmai => Vector3.Distance(fsmai.transform.position, transform.position)).ToList();
+        return inRange;
+    }
+    
+    public List<Blue> BluesInFieldOfView()
+    { List<Blue> inFOV = new List<Blue>();
+        foreach (Blue blues in Blue.Blues)
+        { if (Vector3.Distance(blues.transform.position, transform.position) <= FieldOfView) inFOV.Add(blues) ; }
+        inFOV = inFOV.OrderBy(blues => Vector3.Distance(blues.transform.position, transform.position)).ToList();
+        return inFOV;
+    }
+    public List<Blue> BlueInRange()
+    { List<Blue> inRange = new List<Blue>();
+        foreach (Blue blue in Blue.Blues)
+        { if (Vector3.Distance(blue.transform.position, transform.position) <= FieldOfAttack) inRange.Add(blue) ; }
+        inRange = inRange.OrderBy(blue => Vector3.Distance(blue.transform.position, transform.position)).ToList();
         return inRange;
     }
     

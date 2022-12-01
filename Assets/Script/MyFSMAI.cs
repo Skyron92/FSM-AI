@@ -73,4 +73,16 @@ public class MyFSMAI : MonoBehaviour
          {if(Vector3.Distance(blue.transform.position, transform.position) <= SightRange) inRange.Add(blue); }
          inRange = inRange.OrderBy(blue => Vector3.Distance(blue.transform.position, transform.position)).ToList();
          return inRange; }
+
+     public List<MyFSMAI> PartnerInRange()
+     {
+         List<MyFSMAI> inRange = new List<MyFSMAI>();
+         foreach (MyFSMAI fsmai in MyFSMAI.FSMAIs)
+         {
+             if (Vector3.Distance(fsmai.transform.position, transform.position) <= SightRange) inRange.Add(fsmai);
+         }
+
+         inRange = inRange.OrderBy(fsmai => Vector3.Distance(fsmai.transform.position, transform.position)).ToList();
+         return inRange;
+     }
 }

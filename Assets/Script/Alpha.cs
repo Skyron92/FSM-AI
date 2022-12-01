@@ -40,7 +40,9 @@ public class Alpha : MonoBehaviour
         if (!CurrentState.setUpDone)
         { CurrentState.SetUp();
             CurrentState.setUpDone = true; }
-        CurrentState.Do(); }
+        CurrentState.Do(); 
+        Debug.Log(Meute().Count);
+    }
 
     private void OnDrawGizmos()
     { Gizmos.color = Color.blue;
