@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using UnityEngine;
 
-public class Hurt : PredatorState
+public class Hurt : PredatorState //Dans cet état, le predator attaque sa cible 
 {
     public Hurt(Predator context) : base(context)
     {

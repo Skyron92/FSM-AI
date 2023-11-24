@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;using Palmmedia.ReportGenerator.Core.Parser.Analysis;
 using UnityEngine;
 
-public class Hunt : PredatorState
+public class Hunt : PredatorState //Dans cet état, le predator traque une cible en mouvement
 {
     private Vector3 _fsmaiPosition, _fsmaiDirection, _bluePos, _blueDirect, _huntP, _huntB, _hunt;
     private float X, Y, Z, distanceWithPrey, distanceBlue;

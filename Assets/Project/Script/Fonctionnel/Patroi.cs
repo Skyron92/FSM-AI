@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Patroi : PredatorState
+public class Patroi : PredatorState //Dans cet état, le prédator se balade au hasard sur la map
 {
     public Patroi(Predator context) : base(context)
     {

@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class Button : MonoBehaviour
 {
-    public GameObject prefabPredator, prefabBase, prefabAlpha;
+    public GameObject prefabPredator, prefabPrey, prefabAlpha;
     private int prob;
     
     public void CreatePred()
     { Instantiate(prefabPredator); }
 
-    public void CreateBase()
-    { Instantiate(prefabBase); }
+    public void CreatePrey()
+    { Instantiate(prefabPrey); }
 
     public void CreateAlpha()
     { Instantiate(prefabAlpha); }
@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
         if (prob == 1)
         { CreateAlpha(); }
         if (prob == 2)
-        { CreateBase(); }
+        { CreatePrey(); }
         if (prob == 3)
         { CreatePred(); }
     }

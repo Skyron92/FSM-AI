@@ -1003,7 +1003,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &642364612
 GameObject:
@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabPredator: {fileID: 3482339476962515349, guid: e740206ae7bb0fa4190e646671f5e91e, type: 3}
-  prefabBase: {fileID: 2050780233331776915, guid: 47412d06123242f42b786cf22fe01a44, type: 3}
+  prefabPrey: {fileID: 8317504750898901160, guid: 619ff932c801f7043a1691dd38073739, type: 3}
   prefabAlpha: {fileID: 2134622607865892832, guid: 10ddbca2c29177643866464e89ef97a9, type: 3}
 --- !u!1 &1569410433
 GameObject:
@@ -2283,7 +2283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3787375148504800802, guid: a7c2529ed010f6c408ab493da845bbf9, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3787375148504800802, guid: a7c2529ed010f6c408ab493da845bbf9, type: 3}
       propertyPath: m_LocalPosition.x

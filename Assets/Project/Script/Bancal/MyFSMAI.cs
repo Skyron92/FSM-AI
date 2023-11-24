@@ -9,13 +9,11 @@ public class MyFSMAI : MonoBehaviour
     [SerializeField] float _hP = 20;
     [SerializeField] int SightRange;
      public NavMeshAgent NavMeshAgent { get; private set; }
-     public Camera camera;
      public static List<MyFSMAI> FSMAIs = new List<MyFSMAI>();
      private void Awake()
     {
         NavMeshAgent = GetComponent<NavMeshAgent>();
         CurrentState = new MyMove(this);
-        camera = GetComponentInChildren<Camera>();
         FSMAIs.Add(this);
     }
 
